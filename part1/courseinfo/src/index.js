@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
  
 const Header = (student) => {
@@ -28,7 +28,7 @@ const Total = (total) => {
     <p>Number of exercises {total.course.parts[0].exercises + total.course.parts[1].exercises + total.course.parts[2].exercises}</p>
   )
 }
- /*
+
 const App = () => {
   const course = {
     name: 'Half Stack application development',
@@ -56,38 +56,5 @@ const App = () => {
     </div>
   )
 }
-*/
-
-const Display = ({ counter }) => <div>{counter}</div>
-const App = () => {
-  const [ counter, setCounter ] = useState(0)
-
-  const increaseByOne = () => setCounter(counter + 1)
-  const setToZero = () => setCounter(0)
-  const decreaseByOne = () => setCounter(counter - 1)
-
-  return (
-    <div>
-      <Display counter={counter}/>
-      <Button
-        handleClick={increaseByOne}
-        text='plus'
-      />
-      <Button
-        handleClick={setToZero}
-        text='zero'
-      />     
-      <Button
-        handleClick={decreaseByOne}
-        text='minus'
-      />
-    </div>
-  )
-}
-const Button = ({ handleClick, text }) => (
-  <button onClick={handleClick}>
-    {text}
-  </button>
-)
  
 ReactDOM.render(<App />, document.getElementById('root'))
